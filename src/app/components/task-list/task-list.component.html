@@ -1,0 +1,41 @@
+<div class="card m-2" *ngIf="noDataFound">
+    <div class="card-body">
+        <p class="card-text"> Table is empty, Please add task.</p>
+    </div>
+</div>
+<table class="table table-bordered" *ngIf="!noDataFound">
+    <thead>
+        <tr>
+            <th scope="col">Task Id</th>
+            <th scope="col">Task Name</th>
+            <th scope="col">Task Description</th>
+            <th scope="col">Last Modified</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let task of tasks;">
+            <tr>
+                <th scope="row" class="align-middle" changeBGcolor="bg-color" [lastModified]="task.lastModified">
+                    {{task.id}}
+                </th>
+                <td scope="row" class="align-middle" changeBGcolor="bg-color" [lastModified]="task.lastModified">
+                    {{task.taskName}}
+                </td>
+                <td scope="row" class="align-middle" changeBGcolor="bg-color" [lastModified]="task.lastModified">
+                    {{task.taskDescription}}
+                </td>
+                <td scope="row" class="align-middle" changeBGcolor="bg-color" [lastModified]="task.lastModified">
+                    {{task.lastModified | dateLocale: localeStr: zoneStr}}
+                </td>
+                <td scope="row" class="align-middle">
+                    <button type="button" (click)="updateTask('Update', task.id)"
+                        class="btn btn-sm btn-outline-primary mx-2">Edit</button>
+                    <button type="button" (click)="deleteTask(task.id)" class="btn btn-sm btn-outline-success">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

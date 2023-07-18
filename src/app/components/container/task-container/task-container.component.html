@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-sm">
+        <div class="m-2 text-center">
+            <h2 class="text-decoration-underline">Task Management</h2>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="loading">
+    <div class="col-sm">
+        <div class="m-2 text-center">
+            <mat-spinner value="50" diameter="40" mode="indeterminate" class="mat-spinner-center"></mat-spinner>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!error && showContent">
+    <div class="col-sm text-center pad-right-unset">
+        <div class="mx-5">
+            <div class="row">
+                <div [class]="timeZoneClass">
+                    <ng-container [formGroup]="timeZoneForm">
+                        <span class="my-auto text-decoration-underline">Time Zone :-</span>
+                        <mat-radio-group formControlName="timezone" class="m-2" aria-label="Select an option">
+                            <mat-radio-button *ngFor="let timezone of timeZones" [value]="timezone.value"
+                                (change)="selectionChange(timezone.zone)">{{timezone.region}}</mat-radio-button>
+                        </mat-radio-group>
+                    </ng-container>
+                </div>
+                <div *ngIf="taskList.length > 0" class="col-sm-5 d-flex justify-content-end my-auto">
+                    <div class="info-box"></div>
+                    <span class="text-decoration-underline info-ml">Please do action on these row (e.g. update
+                        action)</span>
+                </div>
+            </div>
+            <app-task-list [tasks]="taskList" [zoneStr]="timeZone"></app-task-list>
+            <button type="button" class="btn btn-primary mr-auto" (click)="addTask('Add')">
+                Add Task
+            </button>
+        </div>
+    </div>
+</div>
+<app-error-container *ngIf="error && !loading" (refreshCall)="refreshCall()"></app-error-container>

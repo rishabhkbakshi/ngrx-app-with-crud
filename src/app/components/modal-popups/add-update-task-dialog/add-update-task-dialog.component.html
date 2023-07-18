@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{crudType}} Task</h1>
+<form [formGroup]="taskForm" (ngSubmit)="addUpdateTask()" novalidate>
+    <mat-dialog-content>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Task Name" appTrim required formControlName="taskName">
+            <mat-error>Task Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Task Description" appTrim required formControlName="taskDescription">
+            <mat-error>Task Description is required</mat-error>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-flat-button color="primary">{{crudType}}</button>
+        <button mat-raised-button mat-dialog-close (click)="closeModal()" tabindex="-1">Cancel</button>
+    </mat-dialog-actions>
+</form>
