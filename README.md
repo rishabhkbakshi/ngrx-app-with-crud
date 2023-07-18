@@ -1,4 +1,4 @@
-# ReduxAppWithCrud
+# NgrxAppWithCrud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
 > This app will help you to understand the concept of `NgRX`. You will learn how to create and use <ins>'actions', 'selectors', 'reducers' and 'effects'</ins> with <ins>CRUD (Create, Read, Update and Delete)</ins> operation, and also you will learn how to write the unit cases in all aspects in an Angular project.

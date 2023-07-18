@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/redux-app-with-crud'),
+      dir: require('path').join(__dirname, './coverage/ngrx-app-with-crud'),
       subdir: '.',
       reporters: [
         { type: 'html' },
