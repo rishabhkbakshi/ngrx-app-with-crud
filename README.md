@@ -1,7 +1,14 @@
 # ReduxAppWithCrud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
-> This app will help you to understand the concept of `NgRX`. You will learn like how to create and use <ins>'actions', 'selectors', 'reducers' and 'effects'</ins> with <ins>CRUD (Create, Read, Update and Delete)</ins> operation, and also you will learn how to write the unit cases in all aspects in an Angular project.
+> This app will help you to understand the concept of `NgRX`. You will learn how to create and use <ins>'actions', 'selectors', 'reducers' and 'effects'</ins> with <ins>CRUD (Create, Read, Update and Delete)</ins> operation, and also you will learn how to write the unit cases in all aspects in an Angular project.
+> 
+> Features I have added are:
+> 1. Whenever the user performs add or update operation on a row, after 3 minutes the system will notify the user to perform a new operation (update or delete) on the same by changing the background color to red of the row.
+> 2. User can sort the timezone of the record
+>    * India => Sort by Id (default)
+>    * New York => Sort by Date (ASC)
+>    * London => Sort by Date (DESC)
 
 ## Development server
 
